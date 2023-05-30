@@ -1,0 +1,163 @@
+Realtime Interview Questions Asked in different 3-7yrs experience API Testing interviews
+
+1) What is WebService?
+
+Web Service is a kind of application which doesnt have any UI. It generally transfers data in XML format.
+
+
+
+2) What is UDDI?
+
+Universal Description Discovery and Integration is an XML-based registry for businesses worldwide to list themselves on the Internet.
+
+
+
+3) What is difference between WebService and API?
+
+Web Service needs network connection to transfer data whereas APIs can work without network connection also like JAR files, etc. Mostly, web services are APIs only.
+
+
+
+4) What are the differences between SOAP and REST?
+
+SOAP stands for Simple Object Access Protocol. REST stands for Representational State Transfer.
+
+SOAP is a protocol. REST itself is not a protocol.Internally, REST uses HTTP protocol only.
+
+SOAP uses WSDL whereas REST uses WADL or URI (Uniform Resource Identifier)
+
+SOAP is heavy weight as it only uses XML to transfer data whereas REST is light weight as we can transfer (input/output) in multiple formats like PDF, txt, HTML, XML, etc.
+
+
+
+5) What are the differences between Free and Pro version of SOAPUI?
+
+Free version doesnt open input forms, Pro version does
+
+Some of the steps are missing in Free version like Data Source, Data Sink, etc.
+
+Reporting feature is available in Pro version whereas to do reporting we need to integrate it with ANT
+
+Composite Project option is only available in Pro
+
+Environment and Requirement tabs are only available in Pro Version
+
+
+
+6) What is the structure of WSDL File?
+
+Element Description
+
+<types> Defines the (XML Schema) data types used by the web service
+
+<message> Defines the data elements for each operation
+
+<portType> Describes the operations that can be performed and the messages involved.
+
+<binding> Defines the protocol and data format for each port type
+
+
+
+7) What is Mocking in SOAPUI?
+
+Mocking is a process which enables the user to build test cases with WSDL even if the web service has not been developed bu development team. Major benefit of using Mocking is that the testing team can save its time by creating their test cases even when the build is not ready. Testers can provide their own dummy response at the time of creating their test cases and can eventually replace with actual response when the web service is built by development team.
+
+
+
+8) What are the different assertions in SOAPUI?
+
+Contains Assertion
+
+Not Contains Assertion
+
+SLA Assertion
+
+SOAP Response Assertion
+
+X-Path Assertion - Search for a response at a specific position
+
+X-Query Assertion - If we get multiple responses at specific places then we use X-Query to validate responses at specific multiple positions
+
+Json Path
+
+Jason Path Count
+
+
+
+9) How to create properties at different levels through Groovy?
+
+Project Level: testRunner.testCase.testSuite.project.setPropertyValue('A',"Hello")
+
+Test Suite Level: testRunner.testCase.testSuite.setPropertyValue('A',"Hello")
+
+Test Case Level: testRunner.testCase.setPropertyValue('A',"Hello")
+
+
+
+10) What is the function of Data Source?
+
+Through Data Source, we can give input to different test steps. I have worked with Grid, Notepad and Excel options. By default it will pick first value.
+
+
+
+11) What is Data Source Loop?
+
+Data Source Loop enables the user to give multiple values to a particular test step.
+
+
+
+12) What is Data Sink?
+
+Data Sink enables the user to save the response. If it is outside loop, then it will save only the last value of the response. I have worked with Notepad and Excel options.
+
+
+
+13) How to implement Data Source and Data Sink in Free Version?
+
+We can implement Data Source(Read) and Data Sink(Write) in Free Version by writing Groovy code in Groovy Script test step.
+
+
+
+14) How to create object of Test Step?
+
+tcase = testRunner.testCase
+
+tstep1 = tcase.getTestStepByName("Step1")
+
+tstep1.getProperty("Response")
+
+
+
+15) How to run a particular step through Groovy?
+
+runTestStepByName("Step1")
+
+
+
+16) How to goto a particular step through Groovy?
+
+gotoStepByName("Step1")
+
+
+
+17) What are different methods for REST services?
+
+GET - To retrieve information from server
+
+POST - To post and save information on server
+
+PUT - To modify information on server
+
+DELETE - To delete information on server
+
+
+
+18) What is Service Virtualisation?
+
+I haven't worked on Service Virtualisation. I have worked on Mocking. But I know difference between the two.
+
+
+
+19) What is the difference between Mocking and Service Virtualisation?
+
+Mocking functions tend to be very context-specific, simulating a specific behavioural response to fulfil a certain development need at a certain time (i.e. injecting a missing dependency in order to bypass its absence, or temporarily test its presence, perhaps in isolation from the rest of the application under test). Virtual services, on the other hand, can be deployed throughout the entire production cycle, consistently delivering for all development intents and testing purpose so the same behaviour and functionality for any developer or tester who wants to use them, at any time. Thus, once they are created and exist as part of a project-wide test environment, virtual components eliminate the need for individual developers to write and rewrite their own mocks, saving time and effort for all concerned.
